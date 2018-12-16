@@ -1,0 +1,17 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URI:http://localhost:9000/eureka}
+    healthcheck:
+      enabled: true
+  instance:
+    health-check-url: ${server.servletPath}/health
+microservices:
+  database:
+    controller: http://localhost:9010
+spring:
+  application:
+   name: operations
+server:
+  port: 9011
+trace: true
