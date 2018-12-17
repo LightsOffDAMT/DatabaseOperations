@@ -1,9 +1,7 @@
 package ru.lightsoff.database.operations.entities
 
-import sun.audio.AudioPlayer.player
 
-
-class PlayerInjected(player: Player): Player(){
+class PlayerInjected(player: Player) : Player() {
 
     var user: User? = null
         private set
@@ -16,7 +14,8 @@ class PlayerInjected(player: Player): Player(){
         this.stats = player.stats
         this.userID = player.userID
     }
-    fun withUser(user: User?): Player{
+
+    fun withUser(user: User?): Player {
         this.user = user
         return this
     }

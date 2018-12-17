@@ -1,7 +1,6 @@
 package ru.lightsoff.database.operations.entities
 
-import java.util.HashMap
-import java.util.Optional
+import java.util.*
 
 /**
  * ItemInStorage entity

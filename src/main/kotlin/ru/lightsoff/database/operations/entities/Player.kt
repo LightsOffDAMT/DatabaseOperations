@@ -1,7 +1,7 @@
 package ru.lightsoff.database.operations.entities
 
-import java.awt.*
-import java.util.ArrayList
+import java.awt.Point
+import java.util.*
 
 /**
  * Player entity
@@ -18,7 +18,6 @@ open class Player {
     var userID: Long? = null
 
     var position: Point? = null
-
 
 
     fun withId(id: Long): Player {

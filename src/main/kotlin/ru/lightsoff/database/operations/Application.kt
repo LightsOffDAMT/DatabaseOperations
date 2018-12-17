@@ -9,8 +9,9 @@ import org.springframework.web.reactive.config.EnableWebFlux
 @EnableWebFlux
 @EnableDiscoveryClient
 class Application
+
 //TODO Add R-tree to make fast data queries
 fun main(args: Array<String>) {
-	runApplication<Application>(*args)
+    runApplication<Application>(*args)
 }
 

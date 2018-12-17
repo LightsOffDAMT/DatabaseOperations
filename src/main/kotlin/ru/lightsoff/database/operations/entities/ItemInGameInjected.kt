@@ -1,6 +1,6 @@
 package ru.lightsoff.database.operations.entities
 
-class ItemInGameInjected(itemInGame: ItemInGame?): ItemInGame() {
+class ItemInGameInjected(itemInGame: ItemInGame?) : ItemInGame() {
     var item: ItemInStorage? = ItemInStorage()
         private set
 
@@ -10,7 +10,7 @@ class ItemInGameInjected(itemInGame: ItemInGame?): ItemInGame() {
         this.position = itemInGame?.position
     }
 
-    fun withItem(item: ItemInStorage?): ItemInGameInjected{
+    fun withItem(item: ItemInStorage?): ItemInGameInjected {
         this.item = item
         return this
     }

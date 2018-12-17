@@ -10,7 +10,6 @@ import reactor.core.publisher.Mono
 import ru.lightsoff.database.operations.entities.ItemInGame
 import ru.lightsoff.database.operations.entities.ItemInGameInjected
 import ru.lightsoff.database.operations.entities.ItemInStorage
-import sun.plugin2.main.client.MessagePassingOneWayJSObject
 
 @RestController
 class ItemController {
@@ -18,16 +17,13 @@ class ItemController {
     var databaseControllerUrl: String? = null
 
     @RequestMapping("/injected/itemInGame")
-    fun injectedItemInGameController(@RequestParam @Nullable id: Long?)
-            = Mono.just( getInjectedItemInGame(id) )
+    fun injectedItemInGameController(@RequestParam @Nullable id: Long?) = Mono.just(getInjectedItemInGame(id))
 
-    fun getInjectedItemInGame(id: Long?)
-            = RestTemplate()
-                .getForEntity("$databaseControllerUrl/get/item_in_game" + if(id!=null)"?id=$id" else "", arrayOf(ItemInGame()).javaClass  ).body !!
+    fun getInjectedItemInGame(id: Long?) = RestTemplate()
+            .getForEntity("$databaseControllerUrl/get/item_in_game" + if (id != null) "?id=$id" else "", arrayOf(ItemInGame()).javaClass).body!!
             .map { itemInGame -> ItemInGameInjected(itemInGame).withItem(getItemInStorageData(itemInGame.itemID)?.get(0)) }
 
-    private fun getItemInStorageData(id: Long? )
-            = RestTemplate()
-            .getForEntity("$databaseControllerUrl/get/item_in_storage" + if(id!=null)"?id=$id" else "", arrayOf(ItemInStorage()).javaClass ).body !!
+    private fun getItemInStorageData(id: Long?) = RestTemplate()
+            .getForEntity("$databaseControllerUrl/get/item_in_storage" + if (id != null) "?id=$id" else "", arrayOf(ItemInStorage()).javaClass).body!!
 
 }

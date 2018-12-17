@@ -1,6 +1,6 @@
 package ru.lightsoff.database.operations.entities
 
-import java.util.ArrayList
+import java.util.*
 
 /**
  * GameMap Entity

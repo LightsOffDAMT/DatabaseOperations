@@ -1,6 +1,6 @@
 package ru.lightsoff.database.operations.entities
 
-import java.awt.*
+import java.awt.Point
 
 /**
  * ItemInGame entity
